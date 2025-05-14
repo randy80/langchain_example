@@ -25,3 +25,7 @@ def load():
         os.environ["PPLX_API_KEY"] = getpass.getpass(
             prompt="Enter API key for Perplexity: "
         )
+    if "GOOGLE_API_KEY" not in os.environ:
+        os.environ["GOOGLE_API_KEY"] = getpass.getpass(
+            prompt="Enter API key for Google Gemini: "
+        )
