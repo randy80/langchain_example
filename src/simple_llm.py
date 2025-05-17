@@ -1,11 +1,11 @@
-from langchain.chat_models import init_chat_model
-from langchain_core.messages import SystemMessage, HumanMessage
-from langchain_core.prompts import ChatPromptTemplate
-
 import config
 config.load()
 
-model = init_chat_model("sonar", model_provider="perplexity")
+import model
+model = model.get_gemini()
+
+from langchain_core.messages import SystemMessage, HumanMessage
+from langchain_core.prompts import ChatPromptTemplate
 
 system_template = "Translate the following from English into {language}"
 prompt_template = ChatPromptTemplate.from_messages(
